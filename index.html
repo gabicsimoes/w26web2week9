@@ -22,10 +22,18 @@
             Secondary Header
             <p class="text-body-secondary">Faded Secondary Text</p>
         </h2>
-        <section>
+        <!-- to create a bootstrap grid, you need a container, rows, and columns (all classes) -->
+        <section class="container">
+            <div class="row">
             <!-- bootstrap has a series of colours you can apply to your elements -->
-             <p class="text-primary">Primary Text Colour</p>
-             <p class="text-warning">Warning Text Colour</p>
+             <p class="col-md-5 col-lg-12 text-primary bg-secondary">Primary Text Colour</p>
+             <p class="col-md offset-lg-3 text-warning bg-light">Warning Text Colour</p>
+             <p class="col-md offset-lg-5 text-danger bg-info">Danger Text Colour</p>
+             <p class="col-md-3 col-lg-5 text-light bg-dark">Light Text Colour</p>
+             <!-- you can set the columns to shift to vertical at specific breakpoints, or tell the columns to take up a certain number of column spaces (up to 12) 
+              you can add multiple breakpoint classes so the columns are different sizes at different breakpoints
+              offset tells the column to leave space between it and the previous column -->
+            </div>
         </section>
     </main>
     
