@@ -8,6 +8,26 @@
     <title>Week 9 Demo - First look at bootstrap</title>
 </head>
 <body>
+    <!-- container classes allow you to set the width of your element relative to different breakpoints the default container class is max width at all sizes -->
+    <header class="container bg-dark">
+        <!-- bootstrap works by applying classes in HTML to apply specific styling -->
+        <h1 class="display-1 text-center text-info">Large Display Header</h1>
+    </header>
+
+    <!-- containers can also make things full screen up to certain point, like the large (lg) breakpoint -->
+    <main class="container-lg bg-danger">
+        <!-- bootstrap no longer uses "right" and "left" but "start" and "end", like flexbox and grid -->
+         <!-- bootstrap has a set of breakpoints, which are integrated into their classes uusing sm, md, lg, xl, xxl (the smallest size doens't need a class) -->
+        <h2 class="h2 text-center text-lg-end">
+            Secondary Header
+            <p class="text-body-secondary">Faded Secondary Text</p>
+        </h2>
+        <section>
+            <!-- bootstrap has a series of colours you can apply to your elements -->
+             <p class="text-primary">Primary Text Colour</p>
+             <p class="text-warning">Warning Text Colour</p>
+        </section>
+    </main>
     
 </body>
 <!-- any javascript is always placed at the bottom of the site, so it loads after the site has loaded -->
