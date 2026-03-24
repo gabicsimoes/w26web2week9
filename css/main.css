@@ -1,0 +1,12 @@
+/* you can override a single bootstrap variable, or multiple, by setting up your own values in :root */
+:root{
+    --bs-danger: rgb(110,0,0);
+    --bs-danger-rgb: 110,0,0;
+    /* the danger-rbg variable is used by dynamic elements in script (I think), but you need to change bith the --bs-danger and --bs-danger-rgb to make your changes consistent across your site */
+}
+
+/* you can also set up a custom theme that you can apply to only certain elements on your page */
+[data-bs-theme=custom]{
+    --bs-info: rgb(0,25,198);
+    --bs-info-rgb: 0,25,198;
+}
