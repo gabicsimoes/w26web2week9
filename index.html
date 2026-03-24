@@ -14,6 +14,50 @@
         <h1 class="display-1 text-center text-info">Large Display Header</h1>
     </header>
 
+    <!-- navbar class defines a horizontal navigation bar, navbar-light defines the colour it will be and navbar-expand defines at what breakpoint this will switch from vertical to horizontal -->
+    <nav class="navbar navbar-light navbar-expand-md">
+        <!-- for a collapsable nav, we need a button to act as the hamburguer button -->
+             <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#togglerNav"
+                aria-controls="togglerNav"
+                aria-label="Toggle navigation">
+            
+                <!-- this span is the actual hamburguer icon, the three lines -->
+                 <span class="navbar-toggler-icon"></span>
+            
+            </button>
+        <!-- bootstrap has drop-down navigation functionally you can borrow for your site, but you have to structure it a specific way:
+         ul for the main navigation, with li as each item inside
+         a div for the dropdown portion with a tags insidde it -->
+         <div class="collapse navbar-collapse" id="togglerNav"> <!-- this div is for the collapsible nav -->
+         <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item dropdown">
+                <!-- a data attibute is a custom attribute you can make up: data-something="whatever" -->
+                <a href="#" 
+                    class="nav-link dropdown-toggle"
+                    id="stuffDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+
+                    >Stuff</a>
+                    <!-- for a dropdown, a div with the new menu links must follow the anchor tag 
+                     the "aria-labelledby" must match the id you gave the anchor tag above -->
+                     <div class="dropdown-menu" aria-labelledby="stuffDropdown">
+                        <a href="#" class="dropdown-item">More Stuff</a>
+                        <a href="#" class="dropdown-item">Different Stuff</a>
+                        <a href="#" class="dropdown-item">Other Stuff</a>
+                     </div>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+         </ul>
+    </nav>
+
     <!-- containers can also make things full screen up to certain point, like the large (lg) breakpoint -->
     <main class="container-lg bg-danger">
         <!-- bootstrap no longer uses "right" and "left" but "start" and "end", like flexbox and grid -->
@@ -35,6 +79,69 @@
               offset tells the column to leave space between it and the previous column -->
             </div>
         </section>
+
+        <!-- Bootstrap accordion, copied from getbootstrap.com -->
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    The First Item of Stuff
+                </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>The subtitle for the accordian item.</strong> Stuff,Stuff
+                </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    The Second Item of Stuff
+                </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>The subtitle for the accordian item.</strong> Stuff,Stuff
+                </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    The Third Item of Stuff
+                </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>The subtitle for the accordian item.</strong> Stuff,Stuff
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap carosel, copied from getbootstrap.com -->
+         <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1774249890206-081fd2e702d5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="A white flower in a three in a blurry background">
+                </div>
+                <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1774230380285-bb1104cef073?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="A lemon three background with a bible halfway opened in Psalm91">
+                </div>
+                <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1551285736-ec0a8b9fa849?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="A white flower in a three in a blurry background">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </main>
     
 </body>
